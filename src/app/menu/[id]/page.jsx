@@ -1,6 +1,6 @@
 "use client";
 import CardItemDetail from "@/Components/CardItemDetail";
-import { useSearchParams } from "next/navigation";
+import CardItemDetailChildren from "@/Components/CardItemDetailChildren";
 
 const page = async ({ searchParams }) => {
   const req = await fetch(
@@ -14,9 +14,9 @@ const page = async ({ searchParams }) => {
   return (
     <>
       <div className="row">
-        {data.products.map((details) => {
-          return (<CardItemDetail detail={details}/>)
-        })}
+        {data.products[0]
+          ? data.products.map((details) => <CardItemDetail detail={details} />)
+          : data.children.map((details) => <CardItemDetailChildren detail={details} />)}
       </div>
     </>
   );

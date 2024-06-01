@@ -1,6 +1,5 @@
 const CardItemDetail = (datas) => {
   const data = datas.detail
-  console.log(data)
   return (
     <div className="card m-4" style={{maxWidth: "20%"}}>
       <img src={data.images[0].url} className="card-img-top" alt={data.name} />
